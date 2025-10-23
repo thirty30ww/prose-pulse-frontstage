@@ -89,7 +89,7 @@ export const useAuthStore = defineStore('auth', {
             if (!skipConfirm) {
                 const { ElMessageBox } = await import('element-plus')
                 try {
-                    ElMessageBox.confirm(
+                    await ElMessageBox.confirm(
                         '确定要退出登录吗？',
                         '退出确认',
                         {
