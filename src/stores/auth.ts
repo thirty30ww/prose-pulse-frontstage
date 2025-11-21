@@ -70,7 +70,7 @@ export const useAuthStore = defineStore('auth', {
         // 执行实际的刷新操作
         async _performRefresh() {
             try {
-                const result = await api.user.refresh(this.refreshToken)
+                const result = await api.auth.refresh(this.refreshToken)
                 this.setAuth({
                     accessToken: result.accessToken,
                     refreshToken: result.refreshToken

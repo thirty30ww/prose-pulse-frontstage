@@ -116,11 +116,6 @@ const sendCaptcha = async () => {
 }
 
 const handleRegister = async () => {
-  if (registerForm.value.password !== registerForm.value.confirmPassword) {
-    alert('两次输入的密码不一致')
-    return
-  }
-
   loading.value = true
   const registerDto = {
     username: registerForm.value.username,
@@ -138,7 +133,7 @@ const handleRegister = async () => {
     refreshToken: result.refreshToken
   })
   
-  router.push('/')
+  await router.push('/')
   loading.value = false
 }
 </script>
